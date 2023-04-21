@@ -1,0 +1,26 @@
+#courseFinder {
+  width: fit-content;
+}
+
+.loading#courseFinder:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  inset: 25% 0 0 93%;
+  border: solid var(--bs-primary) 0.25em;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: .75s linear infinite spinner-border;
+}
+
+#courseFinder:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  inset: 25% 0 0 93%;
+  border: solid var(--bs-light) 0.25em;
+  border-radius: 50%;
+}
+

@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Theme override for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ */
+#}
+<div class="position-relative" id="courseFinder">
+  <input{{ attributes.addClass('form-control dropdown-toggle') }} data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false" />{{ children }}
+
+  <ul class="dropdown-menu d-none" id="courseFinderDropdown">
+  </ul>
+</div>
+

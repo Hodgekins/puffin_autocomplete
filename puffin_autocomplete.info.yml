@@ -1,0 +1,7 @@
+name: Puffin Autocomplete
+type: module
+description: Alternative autocomplete for form api
+package: Puffin
+core_version_requirement: ^9 || ^10
+dependencies:
+  - puffin_anim

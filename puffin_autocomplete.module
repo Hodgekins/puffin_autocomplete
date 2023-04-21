@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Gtec module.
+ */
+function puffin_autocomplete_theme($existing, $type, $theme, $path) {
+
+  return [
+    'course_finder' => [
+      'render element' => 'form',
+    ],
+    'course_finder_input' => [
+      'render element' => 'form',
+    ],
+  ];
+
+}
+

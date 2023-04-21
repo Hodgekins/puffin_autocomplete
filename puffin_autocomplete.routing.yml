@@ -1,0 +1,17 @@
+puffin_autocomplete.autocomplete:
+  path: '/puffin-autocomplete/autocomplete'
+  defaults:
+    _title: 'Autocomplete'
+    _controller: '\Drupal\puffin_autocomplete\Controller\PuffinAutocompleteController::build'
+  requirements:
+    _permission: 'access content'
+
+
+puffin_autocomplete.course_finder:
+  path: '/puffin-autocomplete/course-finder'
+  defaults:
+    _title: 'Course finder'
+    _form: 'Drupal\puffin_autocomplete\Form\CourseFinderForm'
+  requirements:
+    _permission: 'access content'
+
