@@ -45,6 +45,7 @@ class CourseFinderForm extends FormBase {
       '#value' => $this->t('Send'),
     ];
 
+    $form['#attached']['library'][] = 'puffin_autocomplete/autocomplete';
     $form['#theme'] = 'course_finder';
 
     return $form;
@@ -57,12 +58,6 @@ class CourseFinderForm extends FormBase {
 
     $url = Url::fromRoute($element['#puffin_autocomplete_route_name'])->toString(TRUE);
     $element['#attributes']['data-puffin-autocomplete-path'] = $url->getGeneratedUrl();
-
-    $element['#attributes']['class'][] = 'puffin-autocomplete';
-
-    $metadata = BubbleableMetadata::createFromRenderArray($element);
-    $metadata->addAttachments(['library' => ['puffin_autocomplete/autocomplete']]);
-    $metadata->applyTo($element);
 
     return $element;
 

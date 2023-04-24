@@ -5,5 +5,6 @@ autocomplete:
     component:
       css/autocomplete.css: {}
   dependencies:
-    - core/drupalSettings
-
+    - core/drupal
+    - core/jquery
+    - core/once
