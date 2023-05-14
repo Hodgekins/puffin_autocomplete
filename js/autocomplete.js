@@ -47,7 +47,7 @@
             let query = courseSearch.value;
             result = element.title.replace(new RegExp(query, "gi"), `<b>${query}</b>`);
             const link = document.createElement("a");
-            link.classList.add("dropdown-item", "lead");
+            link.classList.add("dropdown-item", "lead", "text-wrap");
             link.href = element.url;
 
             link.innerHTML = result;
