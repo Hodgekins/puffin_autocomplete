@@ -7,7 +7,7 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  inset: 25% 0 0 93%;
+  inset: 29% 0 0 95%;
   border: solid var(--bs-primary) 0.25em;
   border-right-color: transparent;
   border-radius: 50%;
@@ -19,8 +19,18 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  inset: 25% 0 0 93%;
+  inset: 29% 0 0 calc(95% - 20px);
   border: solid var(--bs-light) 0.25em;
   border-radius: 50%;
 }
 
+#edit-course-name::placeholder {
+  color: var(--bs-light);
+  font-family: FontAwesome;
+}
+
+@media (min-width: 768px) {
+  #courseFinder:after {
+    left: 95%;
+  }
+}

@@ -42,8 +42,12 @@ class CourseFinderForm extends FormBase {
     ];
     $form['actions']['submit'] = [
       '#type' => 'submit',
-      '#value' => $this->t('Send'),
+      '#value' => $this->t('Search'),
     ];
+    $form['actions']['submit']['#attributes']['class'][] = 'ms-md-4';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn-lg';
+
+    $form['#description_display']['attributes']['class'][] = 'mt-5';
 
     $form['#attached']['library'][] = 'puffin_autocomplete/autocomplete';
     $form['#theme'] = 'course_finder';
@@ -60,24 +64,17 @@ class CourseFinderForm extends FormBase {
     $element['#attributes']['data-puffin-autocomplete-path'] = $url->getGeneratedUrl();
 
     return $element;
-
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function validateForm(array &$form, FormStateInterface $form_state) {
-    if (mb_strlen($form_state->getValue('message')) < 10) {
-      $form_state->setErrorByName('message', $this->t('Message should be at least 10 characters.'));
-    }
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->messenger()->addStatus($this->t('The message has been sent.'));
-    $form_state->setRedirect('<front>');
+    $path_param = [
+      'title' => $form_state->getValue('course_name'),
+    ];
+    $url = Url::fromUserInput('/course-search', ['query' => $path_param]);
+    $form_state->setRedirectUrl($url);
   }
 
 }
